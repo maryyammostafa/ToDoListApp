@@ -1,0 +1,33 @@
+.tasks{
+    background-color: #3A2C54;
+    padding: 20px;
+    border-radius: 15px;
+    button{
+        background-color: #9965DD;
+        color: #000;
+    }
+}
+
+@media (max-width: 1300px) {
+    .tasks{
+        padding-inline: 10px;
+        h3{
+            font-size: 20px;
+        }
+    }
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+    .tasks{
+        h3{
+            font-size: 24px;
+        }
+    }
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+    .tasks{
+        padding-inline: 20px;
+        h3{
+            font-size: 28px;
+        }
+    }
+}

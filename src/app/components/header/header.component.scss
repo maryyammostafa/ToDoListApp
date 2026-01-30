@@ -1,0 +1,22 @@
+header{
+    background-color: #370C62;
+    background: #41295a;
+    background: -webkit-linear-gradient(to right, #2F0743, #41295a);
+    background: linear-gradient(to right, #2F0743, #41295a);
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    img{
+        width: 180px;
+    }
+}
+
+@media (max-width: 1300px) {
+    header{
+        padding: 10px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+    header{
+        padding: 20px;
+    }
+}

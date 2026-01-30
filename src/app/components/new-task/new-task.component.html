@@ -1,0 +1,32 @@
+<div class="popUp" (click)="fireClosePopUp()">
+    <div class="box" (click)="$event.stopPropagation()">
+        <h3>Add Task</h3>
+        <form #MyForm = "ngForm" (submit)="addTask(MyForm)">
+            <div class="form-group mb-3">
+                <label for="Title">Title:</label>
+                <input type="text" Id="Title" name="title" class="form-control" #Title = "ngModel" required ngModel>
+                @if((MyForm.submitted || Title.touched) && Title.invalid){
+                    <p class="alert alert-danger mt-2">This field is required</p>
+                }
+            </div>
+            <div class="form-group mb-3">
+                <label for="Summary">Summary:</label>
+                <textarea  Id="Summary" name="summary" class="form-control" #Summary = "ngModel" required ngModel></textarea>
+                @if((MyForm.submitted || Summary.touched) && Summary.invalid){
+                    <p class="alert alert-danger mt-2">This field is required</p>
+                }
+            </div>
+            <div class="form-group mb-3">
+                <label for="Date">Date:</label>
+                <input type="date" Id="Date" name="date" class="form-control" #Date = "ngModel" required ngModel>
+                @if((MyForm.submitted || Date.touched)&& Date.invalid){
+                    <p class="alert alert-danger mt-2">This field is required</p>
+                }
+            </div>
+            <div class="buttons d-flex justify-content-end">
+                <button class="btn btn- cancel me-2" (click)="fireClosePopUp()">Cancel</button>
+                <button class="btn create">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

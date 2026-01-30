@@ -1,12 +1,25 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "./components/header/header.component";
+import { UserComponent } from "./components/user/user.component";
+import { TasksComponent } from "./components/tasks/tasks.component";
+import { UsersService } from './services/users.service';
+import { UserModel } from './models/user.model';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [HeaderComponent, UserComponent, TasksComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.component.scss'
 })
-export class App {
-  protected readonly title = signal('Project_9');
+export class AppComponent {
+  users !: UserModel[];
+  selectedUser : UserModel | null = null;
+
+  constructor(private userServices: UsersService){
+    this.users = userServices.getUsers();
+  }
+
+  selectUser(user: UserModel){
+    this.selectedUser = user;
+  }
 }

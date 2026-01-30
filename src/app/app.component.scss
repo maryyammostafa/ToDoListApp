@@ -1,0 +1,14 @@
+.app{
+    width: 75%;
+}
+
+@media (max-width: 1300px) {
+    .app{
+        width: 90%;
+    }
+}
+@media (min-width: 993px) and (max-width: 1300px) {
+    .app{
+        width: 80%;
+    }
+}
